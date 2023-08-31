@@ -1,6 +1,6 @@
 # odin-rock-paper-scissors
 
-rock paper scissors game played in the console
+Rock paper scissors game played in the console
 
 ## Description
 
