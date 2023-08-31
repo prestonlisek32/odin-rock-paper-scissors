@@ -1,3 +1,7 @@
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+
+alert(playRound(playerSelection, computerSelection));
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -8,10 +12,9 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let playerChoice;
     while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors") {
-        playerChoice = prompt("Please choose rock, paper, or scissors").toLowerCase();
+        playerChoice = prompt((playerChoice ? `You entered ${playerChoice}, ` : "") + "Please choose rock, paper, or scissors").toLowerCase();
     }
     return playerChoice;
-
 }
 
 function playRound(playerSelection, computerSelction) {
@@ -24,7 +27,7 @@ function playRound(playerSelection, computerSelction) {
             return "You win! Rock beats scissors.";
         }
     } else if (playerSelection == "paper") {
-        if(computerSelction == "scissors") {
+        if (computerSelction == "scissors") {
             return "You lose! Scissors beats paper.";
         } else {
             return "You win! Paper beats rock.";
