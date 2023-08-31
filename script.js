@@ -1,10 +1,9 @@
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
+const ROUNDS = 5;
 
 let playerScore = 0;
+let computerScore = 0;
 
-console.log(playerSelection, computerSelection);
-alert(playRound(playerSelection, computerSelection));
+playGame();
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -22,17 +21,27 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
-function playRound(playerSelection, computerSelction) {
+function playRound(playerSelection, computerSelection) {
+    //tie condition
     if (playerSelection == computerSelection) {
         return "It's a tie!";
     } else if (
-        (playerSelection == "rock" && computerSelction == "scissors") ||
-        (playerSelection == "paper" && computerSelction == "rock") ||
-        (playerSelection == "scissors" && computerSelction == "paper")) {
+        //player win conditions
+        (playerSelection == "rock" && computerSelection == "scissors") ||
+        (playerSelection == "paper" && computerSelection == "rock") ||
+        (playerSelection == "scissors" && computerSelection == "paper")) {
         playerScore++;
-        return `You win! ${playerSelection} beats ${computerSelction}.`;
+        return `You win! ${playerSelection} beats ${computerSelection}.`;
     } else {
-        return `You lose! ${computerSelction} beats ${playerSelection}.`;
+        //if player didnt win, computer won
+        computerScore++;
+        return `You lose! ${computerSelection} beats ${playerSelection}.`;
+    }
+}
+
+function playGame() {
+    for (let i = 0; i < ROUNDS; i++) {
+        alert(playRound(getPlayerChoice(), getComputerChoice()) + `\nPlayer: ${playerScore} Computer: ${computerScore}`);
     }
 }
 
