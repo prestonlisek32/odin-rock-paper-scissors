@@ -1,6 +1,9 @@
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
+let playerScore = 0;
+let computerScore = 0;
+
 alert(playRound(playerSelection, computerSelection));
 
 function getComputerChoice() {
@@ -11,9 +14,11 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerChoice;
+
     while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors") {
         playerChoice = prompt((playerChoice ? `You entered ${playerChoice}, ` : "") + "Please choose rock, paper, or scissors").toLowerCase();
     }
+
     return playerChoice;
 }
 
