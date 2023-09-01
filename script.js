@@ -3,16 +3,18 @@ const ROUNDS = 5;
 let playerScore = 0;
 let computerScore = 0;
 
-const buttons = document.querySelectorAll("buttons");
+const buttons = document.querySelectorAll("button");
 
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
 
+//add an event listener to each button and log its id
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         playRound(button.id, getComputerChoice());
     });
 });
+
 
 
 function getComputerChoice() {
