@@ -15,7 +15,10 @@ buttons.forEach((button) => {
     });
 });
 
-
+function updateScore() {
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
+}
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -40,4 +43,6 @@ function playRound(playerSelection, computerSelection) {
         return `You lose! ${computerSelection} beats ${playerSelection}.`;
     }
 }
+
+
 
