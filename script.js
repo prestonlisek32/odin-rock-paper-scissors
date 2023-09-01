@@ -12,12 +12,13 @@ const computerScoreDisplay = document.querySelector(".computer-score");
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         playRound(button.id, getComputerChoice());
+        updateScore();
     });
 });
 
 function updateScore() {
-    playerScoreDisplay.textContent = playerScore;
-    computerScoreDisplay.textContent = computerScore;
+    playerScoreDisplay.textContent = `Player Score: ${playerScore}`;
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
 }
 
 function getComputerChoice() {
