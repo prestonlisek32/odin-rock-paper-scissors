@@ -6,9 +6,17 @@ let computerScore = 0;
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
-console.log(rock, paper, scissors);
+
 rock.addEventListener("click", () => {
     alert(playRound("rock", getComputerChoice()) + `\nPlayer: ${playerScore} Computer: ${computerScore}`);
+});
+
+paper.addEventListener("click", () => {
+    alert(playRound("paper", getComputerChoice()) + `\nPlayer: ${playerScore} Computer: ${computerScore}`);
+});
+
+scissors.addEventListener("click", () => {
+    alert(playRound("scissors", getComputerChoice()) + `\nPlayer: ${playerScore} Computer: ${computerScore}`);
 });
 
 function getComputerChoice() {
