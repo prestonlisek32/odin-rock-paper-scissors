@@ -8,7 +8,6 @@ const buttons = document.querySelectorAll("button");
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
 
-//add an event listener to each button and log its id
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         playRound(button.id, getComputerChoice());
