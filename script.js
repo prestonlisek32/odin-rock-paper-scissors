@@ -3,24 +3,11 @@ const ROUNDS = 5;
 let playerScore = 0;
 let computerScore = 0;
 
-const rock = document.querySelector(".rock");
-const paper = document.querySelector(".paper");
-const scissors = document.querySelector(".scissors");
+const buttons = document.querySelectorAll("button");
 
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
 
-rock.addEventListener("click", () => {
-    alert(playRound("rock", getComputerChoice()) + `\nPlayer: ${playerScore} Computer: ${computerScore}`);
-});
-
-paper.addEventListener("click", () => {
-    alert(playRound("paper", getComputerChoice()) + `\nPlayer: ${playerScore} Computer: ${computerScore}`);
-});
-
-scissors.addEventListener("click", () => {
-    alert(playRound("scissors", getComputerChoice()) + `\nPlayer: ${playerScore} Computer: ${computerScore}`);
-});
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
