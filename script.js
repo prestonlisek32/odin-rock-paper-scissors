@@ -7,6 +7,9 @@ const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 
+const playerScoreDisplay = document.querySelector(".player-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
+
 rock.addEventListener("click", () => {
     alert(playRound("rock", getComputerChoice()) + `\nPlayer: ${playerScore} Computer: ${computerScore}`);
 });
